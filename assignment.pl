@@ -4,8 +4,9 @@ isElementInList(El, [El|Tail]).
               isElementInList(El, Tail).
 
 %Definitions for mergeLists(List1, List2, Merged)
-mergeLists(L1, L2, Merged):-
-append(L1, L2, Merged).
+mergeLists([], L, L).
+ mergeLists([Top|Tail],L,[Top|Bottom]):-
+    mergeLists(Tail, L, Bottom).
 
 %Definitions for reverseList(List, ReversedList)
 reverseList(L, Rev):-
